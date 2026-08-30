@@ -1,0 +1,891 @@
+:root {
+  --primary: #9c7c60; /* Warm gold-brown */
+  --secondary: #3d2f24; /* Rich dark brown */
+  --tertiary: #f0e8df; /* Soft cream */
+  --accent: #d4b894; /* Pale gold */
+  --text-dark: #2d2418; /* Deep brown */
+  --text-light: #f9f6f2; /* Off-white */
+  --shadow: rgba(61, 47, 36, 0.15);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+  scroll-padding-top: 120px;
+}
+
+body {
+  font-family: "游明朝", "Yu Mincho", "Hiragino Mincho ProN", "MS P明朝", serif;
+  line-height: 1.8;
+  font-size: 1.6rem;
+  color: var(--text-dark);
+  margin: 0;
+  background-color: var(--tertiary);
+  letter-spacing: 0.03em;
+}
+
+.container {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  z-index: -1;
+  padding-bottom: 80px;
+}
+
+.bg-image {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("../images/resizeAdobeStock_184019842.jpg");
+  background-size: cover;
+  background-position: center;
+  filter: grayscale(30%) contrast(90%) brightness(105%) opacity(0.15);
+  mix-blend-mode: multiply;
+  z-index: -100010;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  vertical-align: bottom;
+}
+
+a {
+  text-decoration: none;
+  color: var(--text-dark);
+  transition: all 0.3s ease;
+}
+
+a:hover {
+  color: var(--primary);
+}
+
+:root {
+  --cream: #f9f6f2;
+  --light-gold: #e6d7b9;
+  --gold: #c0a26d;
+  --dark-gold: #8f7a48;
+  --brown: #3d2920;
+  --light-brown: #87633d;
+  --off-white: #fcfaf7;
+  --charcoal: #2a2a2a;
+}
+:root {
+  --primary: #9c7c60; /* Warm gold-brown */
+  --secondary: #3d2f24; /* Rich dark brown */
+  --tertiary: #f0e8df; /* Soft cream */
+  --accent: #d4b894; /* Pale gold */
+  --text-dark: #2d2418; /* Deep brown */
+  --text-light: #f9f6f2; /* Off-white */
+  --shadow: rgba(61, 47, 36, 0.15);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+  scroll-padding-top: 120px;
+}
+
+body {
+  font-family: "Noto Serif JP", "游明朝", "Yu Mincho", "Hiragino Mincho ProN",
+    "MS P明朝", serif;
+  line-height: 1.8;
+  font-size: 1.6rem;
+  background-color: var(--cream);
+  color: var(--brown);
+  letter-spacing: 0.05em;
+}
+
+a {
+  text-decoration: none;
+  color: var(--brown);
+  /* transition: color 0.3s ease; */
+}
+
+a:hover {
+  color: var(--gold);
+}
+
+ul,
+li {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  vertical-align: bottom;
+}
+
+header {
+  height: 80px;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  background-color: rgba(249, 246, 242, 1);
+  box-shadow: 0 3px 15px rgba(62, 41, 32, 0.05);
+  border-bottom: 1px solid rgba(212, 184, 148, 0.15);
+}
+
+header h1 {
+  padding-left: 3rem;
+  margin-top: 0.5rem;
+  width: 100px;
+}
+
+header .navigation {
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(249, 246, 242, 1);
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.8s;
+  margin-right: 15px;
+}
+/* ロゴ調整 */
+header .logo {
+  display: flex;
+}
+
+header .logo_text {
+  display: flex;
+  flex-direction: column; /* テキストを縦に配置 */
+  gap: 10px;
+  margin-top: 16px;
+  margin-left: 15px;
+}
+header .logo_text p {
+  margin: 0;
+  line-height: 1.2;
+}
+header .logo_text p:first-child {
+  font-size: 1.4rem;
+  color: #333;
+}
+
+header .logo_text p:last-child {
+  font-size: 1.7rem;
+  font-weight: bold;
+  color: #333;
+}
+/* ロゴ終わり */
+
+header.open .navigation {
+  opacity: 1;
+  visibility: visible;
+}
+
+header div nav ul {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  text-align: center;
+}
+
+header div nav ul li a {
+  font-family: "Cormorant Garamond", "Noto Serif JP", serif;
+  color: var(--brown);
+  font-size: 2rem;
+  letter-spacing: 0.15em;
+  font-weight: 400;
+}
+
+/* ハンバーガーメニュー */
+header button {
+  position: fixed;
+  top: 15px;
+  right: 15px;
+  z-index: 1000;
+  width: 50px;
+  height: 50px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+
+header button::before,
+header button::after {
+  content: "";
+}
+
+header button::before,
+header button::after,
+header button span {
+  display: block;
+  width: 26px;
+  height: 1px;
+  background-color: var(--brown);
+  transition: 0.3s;
+}
+
+header.open button {
+  gap: 0;
+}
+
+header.open button span {
+  opacity: 0;
+}
+
+header.open button::before {
+  translate: 0 1px;
+  rotate: -45deg;
+}
+
+header.open button::after {
+  translate: 0 -1px;
+  rotate: 45deg;
+}
+
+/* デスクトップナビゲーション */
+@media (width >= 768px) {
+  header {
+    height: 110px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 0px;
+  }
+
+  header h1 {
+    width: 130px;
+    margin-left: 0px;
+    margin-bottom: 1rem;
+  }
+
+  header img {
+    width: 100%;
+  }
+  /* ロゴ調整 */
+  header .logo {
+    /* display: flex; */
+    align-items: center; /* 垂直方向の中央揃え */
+    gap: 2rem; /* ロゴとテキストの間隔 */
+    padding: 1rem 0 1rem 0;
+  }
+
+  header .navigation {
+    position: static;
+    flex-direction: row;
+    height: auto;
+    background-color: transparent;
+    opacity: 1;
+    visibility: visible;
+    width: auto;
+  }
+
+  header div nav {
+    margin-left: auto;
+  }
+
+  header div nav ul {
+    flex-direction: row;
+    align-items: center;
+    gap: 35px;
+  }
+
+  header div nav ul li a {
+    font-size: 1.8rem;
+    position: relative;
+    padding: 8px 0;
+    font-weight: 400;
+    transition: all 0.3s ease;
+  }
+
+  /* 美しいホバーエフェクト */
+  header div nav ul li a::after {
+    content: "";
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(
+      to right,
+      transparent,
+      var(--gold) 50%,
+      transparent
+    );
+    transform: scaleX(0);
+    opacity: 0;
+    transition: transform 0.4s ease, opacity 0.4s ease;
+  }
+
+  header div nav ul li a:hover {
+    color: var(--dark-gold);
+  }
+
+  header div nav ul li a:hover::after {
+    transform: scaleX(1);
+    opacity: 1;
+  }
+
+  header button {
+    display: none;
+  }
+}
+
+/* Main Visual */
+#mainvisual {
+  position: relative;
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin: 70px 0 60px;
+}
+
+.titleBg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 300px;
+  background-image: url(../images/resizeAdobeStock_184019842.jpg);
+  background-size: cover;
+  background-position: center 40%;
+  background-repeat: no-repeat;
+  z-index: 0;
+  filter: brightness(0.8) contrast(1.1);
+}
+
+@media (width >= 768px) {
+  #mainvisual {
+    height: 400px;
+    margin: 100px 0 80px;
+  }
+
+  .titleBg {
+    height: 400px;
+    background-position: center 30%;
+  }
+}
+
+main h2 {
+  position: relative;
+  z-index: 1;
+  color: white;
+  font-size: 3.2rem;
+  letter-spacing: 0.08em;
+  font-weight: 500;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+  padding: 0 20px;
+}
+
+main h2::after {
+  color: white;
+  content: "";
+  display: block;
+  width: 100px;
+  height: 2px;
+  background-color: var(--accent);
+  margin: 20px auto 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* .titleBg p {
+  font-size: 1.8rem;
+  display: block;
+  margin-top: 10px;
+  letter-spacing: 0.1em;
+  font-weight: normal;
+}
+
+@media (width >= 768px) {
+  #mainvisual h2 {
+    font-size: 4.2rem;
+  }
+
+  #mainvisual h2::after {
+    width: 150px;
+    margin-top: 30px;
+  }
+
+  .titleBg p {
+    font-size: 2rem;
+    margin-top: 15px;
+  }
+} */
+.title-text {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  color: white;
+}
+
+main p {
+  font-size: 1.8rem;
+  margin-top: 10px;
+  letter-spacing: 0.1em;
+}
+
+@media (width >= 768px) {
+  main p {
+    font-size: 2rem;
+    margin-top: 15px;
+  }
+}
+
+/* Section Styling */
+section {
+  margin: 40px 24px;
+  background-color: white !important;
+  padding: 32px 28px;
+  box-shadow: 0 10px 30px var(--shadow);
+  position: relative;
+  /* overflow: hidden; */
+}
+
+@media (width >= 768px) {
+  section {
+    background-color: #fff;
+  }
+}
+section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 6px;
+  height: 100%;
+  background: linear-gradient(to bottom, var(--primary), var(--accent));
+}
+
+section p {
+  font-family: "Noto Sans JP", sans-serif;
+  margin-bottom: 16px;
+  font-weight: 300;
+  line-height: 1.8;
+  color: var(--text-dark);
+}
+
+section .icon {
+  vertical-align: text-bottom;
+  width: 32px;
+  height: auto;
+  margin-right: 12px;
+  filter: saturate(0.8) brightness(0.9);
+}
+
+section h2 {
+  border-left: none;
+  padding-left: 0;
+  margin-bottom: 2.5rem;
+  font-size: 2.2rem;
+  color: var(--secondary);
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+section h2::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(to right, var(--accent), transparent);
+  margin-left: 15px;
+}
+
+section div {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+section img:not(.icon) {
+  border-radius: 6px;
+  box-shadow: 0 5px 15px var(--shadow);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+section img:not(.icon):hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px var(--shadow);
+}
+
+/* 料金表*/
+.price-section {
+  margin: 80px 24px;
+  background-color: #f9f7f4;
+  padding: 50px 28px;
+  border-radius: 2px;
+  box-shadow: 0 20px 40px var(--shadow);
+  position: relative;
+  background-image: linear-gradient(
+    to bottom right,
+    rgba(247, 243, 238, 0.9),
+    rgba(255, 253, 250, 0.9)
+  );
+}
+
+.price-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60%;
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    var(--primary),
+    transparent
+  );
+}
+
+.price-section::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60%;
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    var(--primary),
+    transparent
+  );
+}
+
+.price-section h2 {
+  color: var(--secondary);
+  text-align: center;
+  font-size: 2.6rem;
+  margin-bottom: 4rem;
+  letter-spacing: 0.1em;
+  position: relative;
+  font-weight: 500;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.price-section h2::before,
+.price-section h2::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 60px;
+  height: 1px;
+  background-color: var(--primary);
+}
+
+.price-section h2::before {
+  left: calc(50% - 140px);
+}
+
+.price-section h2::after {
+  right: calc(50% - 140px);
+}
+
+.price-table-container {
+  padding: 10px 0;
+  position: relative;
+  /* overflow: hidden; */
+}
+
+.price-table-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("../images/paper-texture.png");
+  opacity: 0.05;
+  pointer-events: none;
+}
+
+.price-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  font-family: "Noto Serif JP", serif;
+  background-color: transparent;
+  position: relative;
+}
+
+.price-table tr {
+  transition: all 0.4s ease;
+  position: relative;
+}
+
+.price-table tr:hover {
+  background-color: rgba(255, 255, 255, 0.7);
+}
+
+.price-table th {
+  text-align: left;
+  padding: 20px 15px;
+  border-bottom: 2px solid var(--accent);
+  color: var(--secondary);
+  font-size: 1.7rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+}
+
+.price-table td {
+  padding: 18px 15px;
+  border-bottom: 1px solid rgba(156, 124, 96, 0.15);
+  font-size: 1.6rem;
+  position: relative;
+}
+
+.price-table tr:last-child td {
+  border-bottom: none;
+}
+
+.price-table .course-name {
+  font-weight: 400;
+  padding-left: 8px;
+  letter-spacing: 0.03em;
+  color: #2a2017;
+}
+
+.price-table .course-time {
+  text-align: center;
+  color: var(--primary);
+  font-weight: 500;
+  letter-spacing: 0.05em;
+}
+
+.price-table .course-price {
+  text-align: right;
+  font-weight: 500;
+  padding-right: 9px;
+  letter-spacing: 0.05em;
+}
+
+.price-table .note {
+  font-size: 1.3rem;
+  color: var(--primary);
+  font-weight: normal;
+  display: block;
+  margin-top: 4px;
+  letter-spacing: 0.02em;
+}
+
+.price-details {
+  font-size: 1.4rem;
+  margin: 30px 0 10px;
+  color: var(--text-dark);
+  text-align: center;
+  font-family: "Noto Sans JP", sans-serif;
+  font-weight: 300;
+  letter-spacing: 0.05em;
+  position: relative;
+  padding-top: 20px;
+}
+
+.price-details::before {
+  content: "✧";
+  display: block;
+  text-align: center;
+  color: var(--primary);
+  font-size: 1.6rem;
+  margin-bottom: 15px;
+  opacity: 0.7;
+}
+
+@media (min-width: 768px) {
+  section {
+    padding: 40px 36px;
+    margin: 50px 5%;
+  }
+
+  .price-section {
+    padding: 60px 50px;
+    margin: 90px 5%;
+    background-image: linear-gradient(
+      to bottom right,
+      rgba(247, 243, 238, 0.9),
+      rgba(255, 253, 250, 0.9)
+    );
+  }
+
+  section h2 {
+    font-size: 2.2rem;
+    margin-bottom: 3rem;
+  }
+
+  .price-section h2 {
+    font-size: 3rem;
+    margin-bottom: 5rem;
+  }
+
+  .price-section h2::before {
+    left: calc(50% - 210px);
+    width: 80px;
+  }
+
+  .price-section h2::after {
+    right: calc(50% - 210px);
+    width: 80px;
+  }
+
+  section .icon {
+    width: 38px;
+  }
+
+  section div {
+    flex-direction: row;
+    align-items: center;
+    gap: 5%;
+  }
+
+  section div p:first-of-type {
+    flex: 0 0 45%;
+  }
+
+  section div p:nth-of-type(2) {
+    flex: 0 0 50%;
+    line-height: 1.9;
+    font-size: 1.7rem;
+  }
+
+  .price-table th {
+    font-size: 1.8rem;
+    padding: 22px 18px;
+  }
+
+  .price-table td {
+    font-size: 1.7rem;
+    padding: 20px 18px;
+  }
+
+  .price-details {
+    font-size: 1.5rem;
+    margin: 35px 0 15px;
+  }
+}
+
+/* Desktop Styling */
+@media (min-width: 1024px) {
+  section {
+    padding: 50px 48px;
+    margin: 70px auto;
+    max-width: 1100px;
+  }
+
+  .price-section {
+    padding: 70px 100px;
+    margin: 120px auto;
+    max-width: 1000px;
+    box-shadow: 0 25px 50px var(--shadow);
+  }
+
+  section h2 {
+    font-size: 2.4rem;
+  }
+
+  .price-section h2 {
+    font-size: 3.2rem;
+  }
+
+  .price-section h2::before {
+    left: calc(50% - 250px);
+    width: 100px;
+  }
+
+  .price-section h2::after {
+    right: calc(50% - 250px);
+    width: 100px;
+  }
+
+  section .icon {
+    width: 42px;
+  }
+
+  section div p:first-of-type {
+    flex: 0 0 47%;
+  }
+
+  section div p:nth-of-type(2) {
+    flex: 0 0 48%;
+    line-height: 2;
+    font-size: 1.8rem;
+  }
+
+  .price-table {
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  .price-table th {
+    font-size: 1.9rem;
+    padding: 25px 20px;
+  }
+
+  .price-table td {
+    font-size: 1.8rem;
+    padding: 22px 20px;
+  }
+}
+
+/* Footer */
+footer {
+  background-color: var(--secondary);
+  color: var(--text-light);
+  text-align: center;
+  padding: 30px 0;
+  margin-top: 80px;
+  position: relative;
+}
+
+footer::before {
+  content: "";
+  position: absolute;
+  top: -15px;
+  left: 0;
+  width: 100%;
+  height: 15px;
+  background: linear-gradient(
+    to right,
+    var(--primary),
+    var(--accent),
+    var(--primary)
+  );
+}
+
+footer p {
+  font-size: 1.4rem;
+  letter-spacing: 0.05em;
+}
+
+@media (min-width: 768px) {
+  footer {
+    padding: 40px 0;
+  }
+
+  footer p {
+    font-size: 1.6rem;
+  }
+}

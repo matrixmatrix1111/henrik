@@ -1,0 +1,542 @@
+@charset "utf-8";
+
+:root {
+  --gray: #f5f1ed;
+  --green: #4a7c59;
+  --brown: #51342a;
+  --gray2: #c4b7b0;
+  --osirase: #a29188;
+  --gold: rgb(143, 122, 72);
+  --black: #333;
+  --accent: #d4b894; /* Pale gold */
+}
+@charset "utf-8";
+
+:root {
+  --cream: #f9f6f2;
+  --light-gold: #e6d7b9;
+  --gold: #c0a26d;
+  --dark-gold: #8f7a48;
+  --brown: #3d2920;
+  --light-brown: #87633d;
+  --off-white: #fcfaf7;
+  --charcoal: #2a2a2a;
+}
+:root {
+  --primary: #9c7c60; /* Warm gold-brown */
+  --secondary: #3d2f24; /* Rich dark brown */
+  --tertiary: #f0e8df; /* Soft cream */
+  --accent: #d4b894; /* Pale gold */
+  --text-dark: #2d2418; /* Deep brown */
+  --text-light: #f9f6f2; /* Off-white */
+  --shadow: rgba(61, 47, 36, 0.15);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+  scroll-padding-top: 120px;
+}
+
+body {
+  font-family: "Noto Serif JP", "游明朝", "Yu Mincho", "Hiragino Mincho ProN",
+    "MS P明朝", serif;
+  line-height: 1.8;
+  font-size: 1.6rem;
+  background-color: var(--cream);
+  color: var(--brown);
+  letter-spacing: 0.05em;
+}
+
+.bg-image {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url(../images/job188-008b.gif);
+  background-repeat: no-repeat;
+  background-size: cover; /* 全体に拡大表示 */
+  background-attachment: fixed; /* スクロールしても背景固定 */
+  background-position: center center;
+  filter: grayscale(60%) contrast(80%) brightness(100%) opacity(0.3);
+  z-index: -1;
+}
+
+a {
+  text-decoration: none;
+  color: var(--brown);
+  /* transition: color 0.3s ease; */
+}
+
+a:hover {
+  color: var(--gold);
+}
+
+ul,
+li {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  vertical-align: bottom;
+}
+
+/* ヘッダー */
+
+header {
+  height: 80px;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  background-color: rgba(249, 246, 242, 1);
+  box-shadow: 0 3px 15px rgba(62, 41, 32, 0.05);
+  border-bottom: 1px solid rgba(212, 184, 148, 0.15);
+}
+
+header h1 {
+  padding-left: 3rem;
+  margin-top: 0.5rem;
+  width: 100px;
+}
+
+header .navigation {
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(249, 246, 242, 1);
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.8s;
+  margin-right: 15px;
+}
+/* ロゴ調整 */
+header .logo {
+  display: flex;
+}
+
+header .logo_text {
+  display: flex;
+  flex-direction: column; /* テキストを縦に配置 */
+  gap: 10px;
+  margin-top: 16px;
+  margin-left: 15px;
+}
+header .logo_text p {
+  margin: 0;
+  line-height: 1.2;
+}
+header .logo_text p:first-child {
+  font-size: 1.4rem;
+  color: #333;
+}
+
+header .logo_text p:last-child {
+  font-size: 1.7rem;
+  font-weight: bold;
+  color: #333;
+}
+/* ロゴ終わり */
+
+header.open .navigation {
+  opacity: 1;
+  visibility: visible;
+}
+
+header div nav ul {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  text-align: center;
+}
+
+header div nav ul li a {
+  font-family: "Cormorant Garamond", "Noto Serif JP", serif;
+  color: var(--brown);
+  font-size: 2rem;
+  letter-spacing: 0.15em;
+  font-weight: 400;
+}
+
+/* ハンバーガーメニュー */
+header button {
+  position: fixed;
+  top: 15px;
+  right: 15px;
+  z-index: 1000;
+  width: 50px;
+  height: 50px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+
+header button::before,
+header button::after {
+  content: "";
+}
+
+header button::before,
+header button::after,
+header button span {
+  display: block;
+  width: 26px;
+  height: 1px;
+  background-color: var(--brown);
+  transition: 0.3s;
+}
+
+header.open button {
+  gap: 0;
+}
+
+header.open button span {
+  opacity: 0;
+}
+
+header.open button::before {
+  translate: 0 1px;
+  rotate: -45deg;
+}
+
+header.open button::after {
+  translate: 0 -1px;
+  rotate: 45deg;
+}
+
+/* デスクトップナビゲーション */
+@media (width >= 768px) {
+  header {
+    height: 110px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 0px;
+  }
+
+  header h1 {
+    width: 130px;
+    margin-left: 0px;
+    margin-bottom: 1rem;
+  }
+
+  header img {
+    width: 100%;
+  }
+  /* ロゴ調整 */
+  header .logo {
+    /* display: flex; */
+    align-items: center; /* 垂直方向の中央揃え */
+    gap: 2rem; /* ロゴとテキストの間隔 */
+    padding: 1rem 0 1rem 0;
+  }
+
+  header .navigation {
+    position: static;
+    flex-direction: row;
+    height: auto;
+    background-color: transparent;
+    opacity: 1;
+    visibility: visible;
+    width: auto;
+  }
+
+  header div nav {
+    margin-left: auto;
+  }
+
+  header div nav ul {
+    flex-direction: row;
+    align-items: center;
+    gap: 35px;
+  }
+
+  header div nav ul li a {
+    font-size: 1.8rem;
+    position: relative;
+    padding: 8px 0;
+    font-weight: 400;
+    transition: all 0.3s ease;
+  }
+
+  /* 美しいホバーエフェクト */
+  header div nav ul li a::after {
+    content: "";
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(
+      to right,
+      transparent,
+      var(--gold) 50%,
+      transparent
+    );
+    transform: scaleX(0);
+    opacity: 0;
+    transition: transform 0.4s ease, opacity 0.4s ease;
+  }
+
+  header div nav ul li a:hover {
+    color: var(--dark-gold);
+  }
+
+  header div nav ul li a:hover::after {
+    transform: scaleX(1);
+    opacity: 1;
+  }
+
+  header button {
+    display: none;
+  }
+}
+/* メインビジュアル */
+.mv {
+  height: 40vh;
+  background: url(../images/AdobeStock_1390834770.jpeg) no-repeat center 0% /
+    auto 140%;
+  /* background-size: 140% auto; */
+  /* background-position: center 0%; 最上部を表示 */
+  max-width: 100%;
+  position: relative; /* 位置指定を追加 */
+  display: flex; /* テキストを中央に配置するため*/
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.mv h2 {
+  color: #fff;
+  font-size: 3.2rem;
+  letter-spacing: 0.2em;
+  font-weight: 500;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+  position: absolute;
+  /* margin-top: 96px; 上からの余白を調整 */
+  top: 96px;
+}
+.mv p {
+  font-size: 1.8rem;
+  display: block;
+  margin-top: 10px;
+  letter-spacing: 0.2em;
+  font-weight: normal;
+  position: absolute;
+  top: 96px;
+  color: #fff;
+  padding-top: 24px;
+}
+.mv h2::after {
+  content: "";
+  display: block;
+  width: 100px;
+  height: 2px;
+  background-color: var(--accent);
+  margin: 0px auto 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+@media screen and (min-width: 768px) {
+  .mv {
+    height: 70vh;
+    background-size: 100% auto;
+    background-position: center 30%;
+    margin-top: 120px; /* ヘッダーの高さ分を追加 */
+  }
+  .mv h2 {
+    font-size: 3.6rem;
+    top: 56px;
+  }
+}
+
+/* お問い合わせ */ /* お問い合わせ */
+.inquiry {
+  margin-top: 60px;
+  padding: 60px 0;
+  background-color: #f1ece7;
+  font-family: "Noto Serif JP", serif;
+}
+
+.required {
+  color: rgba(241, 76, 21, 0.97);
+  font-size: 1.2rem;
+  margin-left: 5px;
+}
+
+.inquiry h2 {
+  font-size: 2.4rem;
+  text-align: center;
+  margin: 0 0 30px;
+  letter-spacing: 0.15em;
+  line-height: 1.5;
+}
+
+form {
+  width: 90%;
+  max-width: 800px;
+  margin: 0 auto;
+  background: #f8f6f3;
+  padding: 30px 20px;
+  border: 3px solid var(--gold);
+}
+
+dl {
+  margin: 0 auto;
+  width: 100%;
+  font-size: 1.6rem;
+  font-weight: 700;
+  line-height: 2.6;
+  font-family: "Noto Sans JP", "ヒラギノ角ゴ ProN W3", Meiryo, sans-serif;
+}
+
+.form-item {
+  display: block;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid rgba(196, 183, 176, 0.5);
+}
+
+dt {
+  margin-bottom: 10px;
+}
+
+dd {
+  width: 100%;
+  margin: 0;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+select,
+textarea {
+  width: 100%;
+  height: 45px;
+  background-color: #eae4e1;
+  border: none;
+  padding: 0 10px;
+  font-size: 16px;
+  box-sizing: border-box;
+  border-radius: 4px;
+}
+
+textarea {
+  height: 150px;
+  padding: 10px;
+}
+
+.form-submit {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.form-submit input[type="submit"] {
+  background-color: #978177;
+  color: #fff;
+  border: none;
+  padding: 12px 30px;
+  font-size: 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.form-submit input[type="submit"]:hover {
+  background-color: #7d6b62;
+}
+
+/* タブレット・PC用スタイル */
+@media screen and (min-width: 768px) {
+  .inquiry {
+    margin-top: 104px;
+    padding: 112px 0 117px;
+  }
+
+  .inquiry h2 {
+    font-size: 3.2rem;
+    margin: 0 0 40px;
+  }
+
+  form {
+    padding: 56px 88px 40px;
+  }
+
+  .form-item {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 30px;
+    padding-bottom: 30px;
+  }
+
+  dt {
+    width: 30%;
+    margin-bottom: 0;
+    padding-top: 12px;
+  }
+
+  dd {
+    width: 70%;
+  }
+
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"],
+  select,
+  textarea {
+    height: 50px;
+    font-size: 18px;
+  }
+  textarea {
+    height: 150px;
+  }
+
+  .form-submit input[type="submit"] {
+    padding: 15px 50px;
+    font-size: 18px;
+  }
+}
+/* Footer */
+footer {
+  text-align: center;
+  padding: 40px 0;
+  background-color: var(--cream);
+  color: var(--brown);
+  border-top: 1px solid rgba(192, 162, 109, 0.2);
+  position: relative;
+}
+
+footer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 1px;
+  background-color: var(--gold);
+}
+
+footer p {
+  font-size: 1.4rem;
+  letter-spacing: 0.1em;
+}
