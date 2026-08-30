@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>スタッフ紹介 | リラクゼーションサロン・ヘンリック</title>
+
+    url("https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;500;600;700&display=swap");
+    <link rel="stylesheet" href="css/staff1.css" />
+  </head>
+  <body>
+    <header>
+      <div class="logo">
+        <h1>
+          <a href="index.html"
+            ><img
+              src="images/goldLogo.png"
+              alt="リラクゼーションサロン・ヘンリック(Henrik) - スウェディッシュマッサージ専門店"
+          /></a>
+        </h1>
+        <div class="logo_text">
+          <p>Relaxation Salon</p>
+          <p>Henrik</p>
+        </div>
+      </div>
+      <div class="navigation">
+        <nav>
+          <ul>
+            <li><a href="index.html">トップ</a></li>
+            <li><a href="course.html">メニュー</a></li>
+            <li><a href="staff1.html">スタッフ紹介</a></li>
+            <li><a href="form.html">お問い合わせ</a></li>
+          </ul>
+        </nav>
+      </div>
+
+      <button><span></span></button>
+    </header>
+    <div class="container">
+      <div class="bg-image"></div>
+      <div class="overlay"></div>
+      <div class="decorative-pattern pattern-top-right"></div>
+      <div class="decorative-pattern pattern-bottom-left"></div>
+
+      <main>
+        <h2>セラピスト紹介</h2>
+        <ul>
+          <li class="your-element">
+            <img
+              src="images/30875713_s.jpg"
+              alt="オーナー テルコ キバヤシ"
+              class="image-align-left"
+            />
+            <p>
+              <span
+                >ヘンリックオーナー：<br class="name" />
+                テルコ キバヤシ</span
+              ><br />
+
+              ある旅先で偶然出会ったスウェディッシュマッサージの魅力に心を打たれ、「これを日本に伝えたい」と一念発起。スウェーデンのサロンで技術を磨き、現地で屋号を引き継ぐまでに成長しました。
+              <br />
+              2018年、新宿に「リラクゼーションサロン・ヘンリック」をオープン。丁寧な施術と温かいおもてなしを大切に、心と体をほぐす癒しの時間をご提供しています。
+            </p>
+          </li>
+          <li>
+            <img
+              src="images/29831276_s.jpg"
+              alt="マリエ ヨシダ"
+              class="image-align-right"
+            />
+            <p>
+              <span>マリエ　ヨシダ</span><br />
+              実は元々、中国で気功を学んでいた異色の経歴の持ち主。毎日、オーナー・テルコと"マッサージとは何か"をめぐって静かに火花を散らしているが、その本心は──「この店、いつか気功サロンにしてみせる…」<br />
+              一押し一押しに念（？）を込めて、お客様にすっきりをお届け中。今日も"気"を整えながら、虎視眈々と野望を育てています。
+            </p>
+          </li>
+          <li>
+            <img
+              src="images/4638159_s.jpg"
+              alt="ショウコ カリヤザキ"
+              class="image-align-right"
+            />
+            <p>
+              <span>ショウコ　カリヤザキ</span><br />
+              「美は形ではなく、空間と心に咲くもの」をモットーに美を追い求めてアロマやリンパドレナージュを学び、ついには"触れることで咲く癒し"に目覚める。
+              <br />
+              現在は、手から伝わるリズムと香りで、お客様の心と体にやさしく花を咲かせる日々。疲れた身体をそっと包み込む、やさらぎのひとときをお届けします。
+            </p>
+          </li>
+        </ul>
+      </main>
+    </div>
+
+    <footer>
+      <p>&copy; 2025 Relaxation Salon Henrik</p>
+    </footer>
+
+    <script>
+      // ハンバーガーメニューの動作だけを維持し、ホバーやアニメーション効果は削除
+      document
+        .querySelector("header button")
+        .addEventListener("click", function () {
+          document.querySelector("header").classList.toggle("open");
+        });
+    </script>
+  </body>
+</html>
